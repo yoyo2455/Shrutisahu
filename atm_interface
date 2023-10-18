@@ -1,0 +1,37 @@
+import java.util.*;
+
+public class Atm_Interface {
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        int withdraw, balance = 10000, deposit, option;
+        while (true) {
+            System.out.println("Welcome to ATM");
+            System.out.println("Press 1 for checking your balance!");
+            System.out.println("Press 2 for withdrawal!");
+            System.out.println("Press 3 for depositing money!");
+            System.out.println("Press 4 for exit! ");
+            option = sc.nextInt();
+            switch (option) {
+                case 1:
+                    System.out.println("Your balance is : " + balance);
+                    break;
+                case 2:
+                    System.out.println("Enter the amount you want to withdraw : ");
+                    withdraw = sc.nextInt();
+                    balance = balance - withdraw;
+                    if (balance <= withdraw) {
+                        System.out.println("Your balance is too low! ");
+                    }
+                    break;
+                case 3:
+                    System.out.println("Enter the amount you want to deposit : ");
+                    deposit = sc.nextInt();
+                    balance = balance + deposit;
+                    break;
+                case 4:
+                    System.exit(0);
+            }
+
+        }
+    }
+}
