@@ -1,0 +1,42 @@
+import java.util.*;
+
+class RandomNumberGenerator {
+    public static void main(String args[]) {
+        int userguess, attempts, won = 0;
+        String s;
+        attempts = 0;
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the no of attempts");
+        int max_attempts = sc.nextInt();
+        Random random = new Random();
+        int randomNumber = random.nextInt(100) + 1;
+        System.out.println("Enter your guess between 1 to 100");
+
+        for (int i = 1; i <= max_attempts; i++) {
+
+            userguess = sc.nextInt();
+
+            if (randomNumber == userguess) {
+                System.out.println("Your guess is correct");
+                won++;
+                break;
+            } else if (randomNumber > userguess) {
+                System.out.println("Your guess is too low");
+
+            } else {
+                System.out.println("Your guess is too high");
+
+            }
+
+            attempts++;
+        }
+        if (attempts == max_attempts) {
+            System.out.println("Sorry you have reached the max number of attempts.");
+            System.out.println("The correct number was: " + randomNumber);
+        }
+        System.out.println("No of rounds played : " + attempts);
+        System.out.println("No of times won : " + won);
+
+    }
+}
