@@ -1,0 +1,38 @@
+import java.util.*;
+
+class Calculator {
+    public static void main(String args[])
+
+    {
+        int total = 0;
+        Scanner sc = new Scanner(System.in);
+
+        int a[] = new int[5];
+        System.out.println("Enter the marks in each subject out of 100");
+        for (int i = 0; i < 5; i++) {
+            a[i] = sc.nextInt();
+            total = total + a[i];
+
+        }
+        System.out.println("Total marks are " + total);
+        double percentage = (total / 5);
+        System.out.println("Average Percentage is " + percentage);
+        if (percentage > 90) {
+            System.out.println("Grade A");
+        } else if (percentage >= 85 && percentage < 90) {
+            System.out.println("Grade B");
+
+        } else if (percentage >= 80 && percentage < 85) {
+            System.out.println("Grade C");
+        } else if (percentage >= 70 && percentage < 80) {
+            System.out.println("Grade D");
+
+        } else if (percentage >= 60 && percentage < 70) {
+            System.out.println("Grade E");
+        } else {
+            System.out.println("Poor");
+        }
+
+    }
+
+}
